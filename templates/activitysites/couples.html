@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- About-->
+
+<center>
+<h1>Dates</h1>
+
+<br>
+<br>
+
+
+</tbody>
+</table>
+
+</center> 
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Activity Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Location</th>
+      <th scope="col">Group Size</th>
+      <th scope="col">Rating</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {% for iCount in activity %}
+    <tr>
+        <td>{{ iCount.name }} </td>
+        <td>{{ iCount.description }}</td>
+        <td>{{ iCount.location }}</td>
+        <td>{{ iCount.group_size }}</td>
+        <td>{{ iCount.rating }}</td>
+        <td><a href="{% url 'editactivity' id=iCount.id %}">Edit</a></td>
+        <td><a href="{% url 'deleteActivity' id=iCount.id %}">Delete</td>
+
+    </tr>
+        {% endfor %}
+  </tbody>
+</table>
+
+<br>
+<center>
+<a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'addActivity' %}">Add an activity</a> 
+</center> 
+{% endblock %}

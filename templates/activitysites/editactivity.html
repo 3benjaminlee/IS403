@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- About-->
+<br>
+<br>
+<br>
+<br>
+<h1 style="text-align: center;">Edit activity page</h1>
+
+<div style="text-align: center">
+    <form name="form" method="POST" action="{% url 'updateActivity' %}">
+        {% csrf_token %}
+            <input type="hidden" id="id" name="id" value="{{ activity.id }}">
+        <label for="name">Activity Name: </label>
+            <input type="text" id="name" name="name" value="{{ activity.name }}">
+            <br><br>
+            <!-- This needs to be a text box but I couldn't figure out the syntax. 12/8/21-->
+        <label for="description">Activity Description: </label>
+            <input type="textbox" id="description" name="description" value="{{ activity.description }}" length="100">
+            <br><br>
+        <label for="location">Location: </label>
+            <input type="text" id="location" name="location" value="{{ activity.location }}">
+            <br><br>
+        <label for="groupsize">Group Size: </label>
+            <input type="number" id="groupsize" name="groupsize" value="{{ activity.group_size }}">
+            <br><br>
+        <label for="rating">Rating: </label>
+            <input type="number" id="rating" name="rating" value="{{ activity.rating }}">
+            <br><br>
+
+        <button type="submit"> Update </button>
+    </form>
+</div>
+
+{% endblock %}

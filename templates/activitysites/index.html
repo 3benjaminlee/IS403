@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Masthead -->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Lets find an activity for you and your +1</div>
+                <div class="masthead-heading text-uppercase">We help young single adults get married </div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{% url 'couples' %}">Get ideas for a fun date here!</a>
+            </div>
+        </header>
+{% endblock %}
