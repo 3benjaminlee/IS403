@@ -1,1 +1,1 @@
-# IS403
+Learning python and Django for the first time
